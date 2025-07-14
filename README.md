@@ -1,0 +1,1 @@
+# qa-guru_hw1_first_autotests
