@@ -1,7 +1,5 @@
 from selene import browser, be, have
 
-
-
 def test_success_login():
     browser.open('https://niffler.qa.guru')
     browser.element('[id="username"]').type('qaguru_test')
@@ -35,6 +33,7 @@ def test_username():
     browser.element('[data-testid="PersonIcon"]').click()
     browser.element('[href="/profile"]').click()
     browser.element('[id="username"]').should(have.value('qaguru_test'))
+    browser.quit()
 
 def test_logout():
     browser.open('https://niffler.qa.guru')
@@ -54,3 +53,4 @@ def test_logout():
 
     browser.all('button.MuiButtonBase-root').element_by(have.text('Log out')).click()
     browser.element('[class="header"]').should(have.text('Log in'))
+    browser.quit()
